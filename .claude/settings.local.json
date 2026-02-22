@@ -15,7 +15,21 @@
       "mcp__Sanity__list_workspace_schemas",
       "Bash(npx sanity@latest schema deploy)",
       "mcp__Sanity__get_schema",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git remote add:*)",
+      "Bash(git push:*)",
+      "mcp__Sanity__add_cors_origin",
+      "Bash(npx sanity documents create:*)",
+      "mcp__Sanity__get_document",
+      "Bash(npx sanity schema deploy)",
+      "Bash(timeout:*)",
+      "Bash(cmd //c \"if exist .next rmdir //s //q .next\")",
+      "Bash(powershell -Command \"Remove-Item -Recurse -Force .next\")",
+      "Bash(powershell -Command \"if (Test-Path .next) { Remove-Item -Recurse -Force .next }\")",
+      "Bash(powershell -Command \"Start-Sleep -Seconds 3; if (Test-Path .next) { Remove-Item -Recurse -Force .next }\")",
+      "Bash(npx sanity documents query:*)",
+      "Bash(del nul)"
     ],
     "deny": [],
     "ask": []

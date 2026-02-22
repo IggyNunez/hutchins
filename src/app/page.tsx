@@ -14,7 +14,9 @@ import Podcast from '@/components/Podcast'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 
-export const revalidate = 60
+// Force dynamic rendering for instant Sanity updates in development
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
 
 export default async function HomePage() {
   const data = await sanityFetch<PageData>({

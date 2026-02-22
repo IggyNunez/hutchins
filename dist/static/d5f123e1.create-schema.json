@@ -1,0 +1,1129 @@
+[
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Main title for your website",
+        "name": "siteTitle",
+        "type": "string"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "fields": [
+          {
+            "name": "alt",
+            "type": "string",
+            "title": "Alt Text"
+          }
+        ],
+        "name": "logo",
+        "type": "image"
+      },
+      {
+        "description": "Small icon that appears in browser tabs (32x32 or 64x64)",
+        "name": "favicon",
+        "type": "image"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "calendlyUrl",
+        "type": "url",
+        "title": "Calendly URL"
+      },
+      {
+        "name": "email",
+        "type": "string",
+        "title": "Email Address"
+      },
+      {
+        "rows": 3,
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "max",
+                "constraint": 160
+              }
+            ],
+            "level": "warning",
+            "message": "Should be under 160 characters for optimal SEO"
+          }
+        ],
+        "description": "Brief description of your site (appears in search results)",
+        "name": "siteDescription",
+        "type": "text",
+        "title": "Meta Description"
+      },
+      {
+        "options": {
+          "layout": "tags"
+        },
+        "description": "Keywords for SEO (e.g., \"AI governance\", \"healthcare analytics\")",
+        "of": [
+          {
+            "type": "string"
+          }
+        ],
+        "name": "keywords",
+        "type": "array"
+      },
+      {
+        "description": "Default author name for content",
+        "name": "author",
+        "type": "string"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "description": "Default image for social media sharing (Facebook, LinkedIn)",
+        "fields": [
+          {
+            "description": "Describe the image for accessibility",
+            "name": "alt",
+            "type": "string",
+            "title": "Alt Text"
+          }
+        ],
+        "name": "ogImage",
+        "type": "image",
+        "title": "Open Graph Image (1200x630)"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "custom"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Your Twitter username (e.g., @yourusername)",
+        "name": "twitterHandle",
+        "type": "string"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "options": {
+                  "list": [
+                    "LinkedIn",
+                    "Twitter/X",
+                    "Instagram",
+                    "YouTube",
+                    "Facebook"
+                  ]
+                },
+                "name": "platform",
+                "type": "string"
+              },
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "uri",
+                        "constraint": {
+                          "options": {
+                            "scheme": [
+                              "/^http$/",
+                              "/^https$/"
+                            ],
+                            "allowRelative": false,
+                            "relativeOnly": false,
+                            "allowCredentials": false
+                          }
+                        }
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "url",
+                "type": "url",
+                "title": "URL"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "socialLinks",
+        "type": "array"
+      }
+    ],
+    "name": "siteSettings",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "label",
+                "type": "string"
+              },
+              {
+                "name": "href",
+                "type": "string",
+                "title": "Link (anchor or URL)"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "links",
+        "type": "array",
+        "title": "Nav Links"
+      },
+      {
+        "initialValue": "Book a call",
+        "name": "ctaText",
+        "type": "string",
+        "title": "CTA Button Text"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "ctaLink",
+        "type": "url",
+        "title": "CTA Button Link"
+      }
+    ],
+    "name": "navigation",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "initialValue": "Healthcare AI & Data Strategy",
+        "name": "eyebrow",
+        "type": "string",
+        "title": "Eyebrow Text"
+      },
+      {
+        "rows": 2,
+        "name": "headline",
+        "type": "text"
+      },
+      {
+        "rows": 5,
+        "name": "body",
+        "type": "text",
+        "title": "Body Copy"
+      },
+      {
+        "fields": [
+          {
+            "name": "text",
+            "type": "string",
+            "title": "Button Text"
+          },
+          {
+            "validation": [
+              {
+                "rules": [
+                  {
+                    "flag": "uri",
+                    "constraint": {
+                      "options": {
+                        "scheme": [
+                          "/^http$/",
+                          "/^https$/"
+                        ],
+                        "allowRelative": false,
+                        "relativeOnly": false,
+                        "allowCredentials": false
+                      }
+                    }
+                  }
+                ],
+                "level": "error"
+              }
+            ],
+            "name": "url",
+            "type": "url",
+            "title": "URL"
+          }
+        ],
+        "name": "primaryCta",
+        "type": "object",
+        "title": "Primary CTA"
+      },
+      {
+        "fields": [
+          {
+            "name": "text",
+            "type": "string",
+            "title": "Button Text"
+          },
+          {
+            "name": "href",
+            "type": "string",
+            "title": "Anchor Link"
+          }
+        ],
+        "name": "secondaryCta",
+        "type": "object",
+        "title": "Secondary CTA"
+      },
+      {
+        "name": "badgeQuote",
+        "type": "string",
+        "title": "Floating Badge Quote"
+      },
+      {
+        "initialValue": "30 minutes. Calm, diagnostic, no pitch.",
+        "name": "ctaSubtext",
+        "type": "string",
+        "title": "CTA Subtext (italic)"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "max",
+                "constraint": 6
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "value",
+                "type": "string"
+              },
+              {
+                "name": "label",
+                "type": "string"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "stats",
+        "type": "array",
+        "title": "Stats Row"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "fields": [
+          {
+            "name": "alt",
+            "type": "string",
+            "title": "Alt Text"
+          }
+        ],
+        "name": "heroImage",
+        "type": "image"
+      }
+    ],
+    "name": "heroSection",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "description": "Credential badges displayed in the proof strip. Drag to reorder.",
+        "of": [
+          {
+            "type": "string"
+          }
+        ],
+        "name": "items",
+        "type": "array",
+        "title": "Proof Items"
+      }
+    ],
+    "name": "proofSection",
+    "type": "document",
+    "title": "Proof Bar"
+  },
+  {
+    "fields": [
+      {
+        "initialValue": "The Problem",
+        "name": "eyebrow",
+        "type": "string"
+      },
+      {
+        "rows": 2,
+        "name": "heading",
+        "type": "text",
+        "title": "Section Heading"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "heading",
+                "type": "string",
+                "title": "Problem Heading"
+              },
+              {
+                "rows": 3,
+                "name": "body",
+                "type": "text",
+                "title": "Problem Description"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "problems",
+        "type": "array",
+        "title": "Problem Cards"
+      },
+      {
+        "rows": 4,
+        "name": "pullquote",
+        "type": "text",
+        "title": "Pullquote Text"
+      }
+    ],
+    "name": "problemsSection",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "initialValue": "The Solution",
+        "name": "eyebrow",
+        "type": "string"
+      },
+      {
+        "rows": 2,
+        "name": "heading",
+        "type": "text",
+        "title": "Section Heading"
+      },
+      {
+        "rows": 5,
+        "name": "intro",
+        "type": "text",
+        "title": "Intro Paragraph"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "number",
+                "type": "string",
+                "title": "Number Label"
+              },
+              {
+                "name": "heading",
+                "type": "string",
+                "title": "Outcome Heading"
+              },
+              {
+                "rows": 2,
+                "name": "body",
+                "type": "text",
+                "title": "Outcome Description"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "outcomes",
+        "type": "array",
+        "title": "Outcome Cards"
+      }
+    ],
+    "name": "solutionSection",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "initialValue": "How We Work",
+        "name": "eyebrow",
+        "type": "string"
+      },
+      {
+        "name": "heading",
+        "type": "string",
+        "title": "Section Heading"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "number",
+                "type": "string",
+                "title": "Step Number"
+              },
+              {
+                "name": "heading",
+                "type": "string",
+                "title": "Step Heading"
+              },
+              {
+                "rows": 3,
+                "name": "body",
+                "type": "text",
+                "title": "Step Body"
+              },
+              {
+                "rows": 3,
+                "name": "detail",
+                "type": "text",
+                "title": "Detail / Aside"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "steps",
+        "type": "array",
+        "title": "Process Steps"
+      },
+      {
+        "fields": [
+          {
+            "name": "text",
+            "type": "string",
+            "title": "Button Text"
+          },
+          {
+            "validation": [
+              {
+                "rules": [
+                  {
+                    "flag": "uri",
+                    "constraint": {
+                      "options": {
+                        "scheme": [
+                          "/^http$/",
+                          "/^https$/"
+                        ],
+                        "allowRelative": false,
+                        "relativeOnly": false,
+                        "allowCredentials": false
+                      }
+                    }
+                  }
+                ],
+                "level": "error"
+              }
+            ],
+            "name": "url",
+            "type": "url",
+            "title": "URL"
+          }
+        ],
+        "name": "cta",
+        "type": "object",
+        "title": "CTA"
+      },
+      {
+        "name": "ctaSubtext",
+        "type": "string",
+        "title": "CTA Subtext"
+      }
+    ],
+    "name": "processSection",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "initialValue": "The Guide",
+        "name": "eyebrow",
+        "type": "string"
+      },
+      {
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "title": "Title / Role"
+      },
+      {
+        "description": "Each item becomes a separate paragraph",
+        "of": [
+          {
+            "type": "text"
+          }
+        ],
+        "name": "bio",
+        "type": "array",
+        "title": "Bio Paragraphs"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "fields": [
+          {
+            "name": "alt",
+            "type": "string",
+            "title": "Alt Text"
+          }
+        ],
+        "name": "portrait",
+        "type": "image",
+        "title": "Portrait Photo"
+      },
+      {
+        "name": "quote",
+        "type": "string",
+        "title": "Portrait Overlay Quote"
+      },
+      {
+        "of": [
+          {
+            "type": "string"
+          }
+        ],
+        "name": "credentials",
+        "type": "array"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "max",
+                "constraint": 4
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "value",
+                "type": "string"
+              },
+              {
+                "name": "label",
+                "type": "string"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "stats",
+        "type": "array",
+        "title": "Stats Grid"
+      },
+      {
+        "fields": [
+          {
+            "name": "text",
+            "type": "string"
+          },
+          {
+            "name": "href",
+            "type": "string",
+            "title": "Link"
+          }
+        ],
+        "name": "primaryCta",
+        "type": "object",
+        "title": "Primary CTA"
+      },
+      {
+        "fields": [
+          {
+            "name": "text",
+            "type": "string"
+          },
+          {
+            "name": "href",
+            "type": "string",
+            "title": "Link"
+          }
+        ],
+        "name": "secondaryCta",
+        "type": "object",
+        "title": "Secondary CTA"
+      }
+    ],
+    "name": "aboutSection",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "initialValue": "Speaking",
+        "name": "eyebrow",
+        "type": "string"
+      },
+      {
+        "name": "heading",
+        "type": "string",
+        "title": "Display Heading"
+      },
+      {
+        "rows": 2,
+        "name": "tagline",
+        "type": "text",
+        "title": "Tagline (italic)"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "fields": [
+          {
+            "name": "alt",
+            "type": "string",
+            "title": "Alt Text"
+          }
+        ],
+        "name": "photo",
+        "type": "image",
+        "title": "Speaking Photo"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "number",
+                "type": "string"
+              },
+              {
+                "name": "heading",
+                "type": "string",
+                "title": "Topic Title"
+              },
+              {
+                "rows": 2,
+                "name": "body",
+                "type": "text",
+                "title": "Description"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "topics",
+        "type": "array",
+        "title": "Speaking Topics"
+      },
+      {
+        "name": "ctaHeading",
+        "type": "string",
+        "title": "CTA Card Heading"
+      },
+      {
+        "name": "ctaBody",
+        "type": "string",
+        "title": "CTA Card Body"
+      },
+      {
+        "initialValue": "Inquire",
+        "name": "ctaButtonText",
+        "type": "string",
+        "title": "CTA Button Text"
+      },
+      {
+        "name": "ctaButtonHref",
+        "type": "string",
+        "title": "CTA Button Link"
+      }
+    ],
+    "name": "speakingSection",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "initialValue": "Published Work",
+        "name": "eyebrow",
+        "type": "string"
+      },
+      {
+        "name": "bookTitle",
+        "type": "string"
+      },
+      {
+        "rows": 2,
+        "name": "subtitle",
+        "type": "text"
+      },
+      {
+        "rows": 3,
+        "name": "description",
+        "type": "text"
+      },
+      {
+        "initialValue": "Get the Book",
+        "name": "ctaText",
+        "type": "string",
+        "title": "CTA Button Text"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "purchaseUrl",
+        "type": "url",
+        "title": "Purchase URL"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "description": "Optional: upload actual book cover.",
+        "name": "coverImage",
+        "type": "image"
+      }
+    ],
+    "name": "bookSection",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "initialValue": "Podcast",
+        "name": "eyebrow",
+        "type": "string"
+      },
+      {
+        "name": "heading",
+        "type": "string",
+        "title": "Podcast Name"
+      },
+      {
+        "rows": 3,
+        "name": "description",
+        "type": "text"
+      },
+      {
+        "fields": [
+          {
+            "name": "title",
+            "type": "string",
+            "title": "Episode Title"
+          },
+          {
+            "rows": 2,
+            "name": "description",
+            "type": "text",
+            "title": "Episode Description"
+          }
+        ],
+        "name": "latestEpisode",
+        "type": "object"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "name",
+                "type": "string",
+                "title": "Platform Name"
+              },
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "uri",
+                        "constraint": {
+                          "options": {
+                            "scheme": [
+                              "/^http$/",
+                              "/^https$/"
+                            ],
+                            "allowRelative": false,
+                            "relativeOnly": false,
+                            "allowCredentials": false
+                          }
+                        }
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "url",
+                "type": "url",
+                "title": "URL"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "platforms",
+        "type": "array",
+        "title": "Platform Links"
+      }
+    ],
+    "name": "podcastSection",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "initialValue": "Get in Touch",
+        "name": "eyebrow",
+        "type": "string"
+      },
+      {
+        "rows": 2,
+        "name": "heading",
+        "type": "text"
+      },
+      {
+        "rows": 3,
+        "name": "body",
+        "type": "text",
+        "title": "Body Copy"
+      },
+      {
+        "fields": [
+          {
+            "initialValue": "Prefer to book directly?",
+            "name": "label",
+            "type": "string"
+          },
+          {
+            "name": "buttonText",
+            "type": "string"
+          },
+          {
+            "validation": [
+              {
+                "rules": [
+                  {
+                    "flag": "uri",
+                    "constraint": {
+                      "options": {
+                        "scheme": [
+                          "/^http$/",
+                          "/^https$/"
+                        ],
+                        "allowRelative": false,
+                        "relativeOnly": false,
+                        "allowCredentials": false
+                      }
+                    }
+                  }
+                ],
+                "level": "error"
+              }
+            ],
+            "name": "buttonUrl",
+            "type": "url",
+            "title": "Button URL"
+          },
+          {
+            "name": "subtext",
+            "type": "string"
+          }
+        ],
+        "name": "bookingCard",
+        "type": "object"
+      },
+      {
+        "name": "email",
+        "type": "string",
+        "title": "Contact Email"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "label",
+                "type": "string",
+                "title": "Field Label"
+              },
+              {
+                "name": "name",
+                "type": "string",
+                "title": "Field Name (HTML)"
+              },
+              {
+                "options": {
+                  "list": [
+                    "text",
+                    "email",
+                    "textarea"
+                  ]
+                },
+                "name": "type",
+                "type": "string",
+                "title": "Field Type"
+              },
+              {
+                "initialValue": true,
+                "name": "required",
+                "type": "boolean"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "formFields",
+        "type": "array"
+      },
+      {
+        "name": "successHeading",
+        "type": "string",
+        "title": "Success Message Heading"
+      },
+      {
+        "rows": 2,
+        "name": "successBody",
+        "type": "text",
+        "title": "Success Message Body"
+      }
+    ],
+    "name": "contactSection",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "rows": 3,
+        "name": "brandDescription",
+        "type": "text"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "heading",
+                "type": "string",
+                "title": "Column Heading"
+              },
+              {
+                "of": [
+                  {
+                    "fields": [
+                      {
+                        "name": "label",
+                        "type": "string"
+                      },
+                      {
+                        "name": "href",
+                        "type": "string",
+                        "title": "URL or Anchor"
+                      },
+                      {
+                        "initialValue": false,
+                        "name": "external",
+                        "type": "boolean",
+                        "title": "External Link?"
+                      }
+                    ],
+                    "type": "object"
+                  }
+                ],
+                "name": "links",
+                "type": "array"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "navSections",
+        "type": "array",
+        "title": "Footer Nav Sections"
+      },
+      {
+        "description": "Use {year} for dynamic year",
+        "name": "copyrightText",
+        "type": "string"
+      }
+    ],
+    "name": "footerSection",
+    "type": "document",
+    "title": "Footer"
+  }
+]

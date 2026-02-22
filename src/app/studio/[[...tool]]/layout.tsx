@@ -1,3 +1,5 @@
+import '../studio-override.css'
+
 export const metadata = {
   title: 'Hutchins Data Strategy | Studio',
 }

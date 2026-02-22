@@ -1,0 +1,37 @@
+/* Override global CSS for Sanity Studio */
+html,
+body {
+  overflow: auto !important;
+  cursor: auto !important;
+  max-width: 100% !important;
+}
+
+::-webkit-scrollbar {
+  display: block !important;
+  width: 8px !important;
+  height: 8px !important;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1 !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888 !important;
+  border-radius: 4px !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555 !important;
+}
+
+/* Ensure all Sanity Studio elements can scroll */
+* {
+  cursor: auto !important;
+}
+
+/* Remove custom cursor elements from Studio */
+#c-dot,
+#c-ring {
+  display: none !important;
+}

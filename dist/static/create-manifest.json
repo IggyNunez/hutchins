@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "createdAt": "2026-02-22T18:18:41.138Z",
+  "createdAt": "2026-02-22T19:02:22.711Z",
   "workspaces": [
     {
       "name": "hutchins-studio",
@@ -13,7 +13,7 @@
         "enabled": false,
         "__internal": {}
       },
-      "schema": "64cf0fc8.create-schema.json",
+      "schema": "d5f123e1.create-schema.json",
       "tools": "ba47da56.create-tools.json"
     }
   ],
