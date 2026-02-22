@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir:*)",
+      "mcp__Sanity__list_projects",
+      "Bash(npm create sanity@latest:*)",
+      "mcp__Sanity__create_documents_from_json",
+      "mcp__Sanity__publish_documents",
+      "Bash(taskkill:*)",
+      "Bash(nul)",
+      "Bash(if exist \".next\" rmdir /s /q .next)",
+      "Bash(npm run dev:*)",
+      "mcp__Sanity__query_documents",
+      "mcp__Sanity__patch_document_from_json",
+      "mcp__Sanity__list_workspace_schemas",
+      "Bash(npx sanity@latest schema deploy)",
+      "mcp__Sanity__get_schema",
+      "Bash(git add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

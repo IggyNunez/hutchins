@@ -1,66 +1,43 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import { sanityFetch } from '@/sanity/client'
+import { allSectionsQuery } from '@/sanity/queries'
+import type { PageData } from '@/sanity/types'
+import Nav from '@/components/Nav'
+import Hero from '@/components/Hero'
+import Proof from '@/components/Proof'
+import Problems from '@/components/Problems'
+import Solution from '@/components/Solution'
+import Process from '@/components/Process'
+import About from '@/components/About'
+import Speaking from '@/components/Speaking'
+import Book from '@/components/Book'
+import Podcast from '@/components/Podcast'
+import Contact from '@/components/Contact'
+import Footer from '@/components/Footer'
 
-export default function Home() {
+export const revalidate = 60
+
+export default async function HomePage() {
+  const data = await sanityFetch<PageData>({
+    query: allSectionsQuery,
+    tags: ['sanity'],
+  })
+
+  console.log('Page data:', JSON.stringify(data, null, 2))
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+    <>
+      <Nav data={data.navigation} settings={data.siteSettings} />
+      <Hero data={data.hero} />
+      <Proof data={data.proof} />
+      <Problems data={data.problems} />
+      <Solution data={data.solution} />
+      <Process data={data.process} settings={data.siteSettings} />
+      <About data={data.about} />
+      <Speaking data={data.speaking} />
+      <Book data={data.book} />
+      <Podcast data={data.podcast} />
+      <Contact data={data.contact} settings={data.siteSettings} />
+      <Footer data={data.footer} settings={data.siteSettings} />
+    </>
+  )
 }
