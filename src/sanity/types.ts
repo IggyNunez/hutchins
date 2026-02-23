@@ -30,6 +30,9 @@ export interface SocialLink {
 export interface SiteSettingsData {
   siteTitle: string
   siteDescription: string
+  keywords?: string[]
+  author?: string
+  twitterHandle?: string
   logo: SanityImage
   favicon: SanityImage
   ogImage: SanityImage
