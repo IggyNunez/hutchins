@@ -74,7 +74,7 @@ export function useTextReveal(
 export function useParallax(
   speed: number = 0.5,
   options: ScrollTrigger.Vars = {}
-): RefObject<HTMLElement> {
+): RefObject<HTMLElement | null> {
   const ref = useRef<HTMLElement>(null)
 
   useEffect(() => {
@@ -102,7 +102,7 @@ export function useStickySection(
     pinSpacing?: boolean
     scrub?: boolean | number
   } = {}
-): RefObject<HTMLElement> {
+): RefObject<HTMLElement | null> {
   const ref = useRef<HTMLElement>(null)
 
   useEffect(() => {
@@ -176,7 +176,7 @@ export function useCounterAnimation(
 /**
  * Hook for magnetic button effect
  */
-export function useMagneticEffect(strength: number = 0.3): RefObject<HTMLElement> {
+export function useMagneticEffect(strength: number = 0.3): RefObject<HTMLElement | null> {
   const ref = useRef<HTMLElement>(null)
 
   useEffect(() => {
@@ -196,7 +196,7 @@ export function useMagneticEffect(strength: number = 0.3): RefObject<HTMLElement
 export function useScrollTimeline(
   animationCallback: (tl: gsap.core.Timeline) => void,
   options: ScrollTrigger.Vars = {}
-): RefObject<HTMLElement> {
+): RefObject<HTMLElement | null> {
   const ref = useRef<HTMLElement>(null)
 
   useEffect(() => {
@@ -275,7 +275,7 @@ export function useStaggerChildren(
     ease?: string
     from?: 'start' | 'end' | 'center' | 'edges' | 'random'
   } = {}
-): RefObject<HTMLElement> {
+): RefObject<HTMLElement | null> {
   const ref = useRef<HTMLElement>(null)
   const isInView = useInView(ref as RefObject<Element>, { once: true, margin: '-10%' })
 
@@ -312,7 +312,7 @@ export function useRevealAnimation(
     rootMargin?: string
     animationClass?: string
   } = {}
-): RefObject<HTMLElement> {
+): RefObject<HTMLElement | null> {
   const ref = useRef<HTMLElement>(null)
 
   useEffect(() => {
